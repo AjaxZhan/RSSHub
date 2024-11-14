@@ -47,7 +47,7 @@ export const route: Route = {
                     const response = await ofetch(item.link);
                     const $ = load(response);
                     // 从公告详情页面选择类名为“v_news_content”的内容
-                    item.description = $('.v_news_content').html();
+                    item.description = $('.v_news_content').html() + '<hr>' + $('.detail form ul').html();
                     return item;
                 })
             )
