@@ -5,9 +5,9 @@ import cache from '@/utils/cache';
 import { parseDate } from '@/utils/parse-date';
 
 export const route: Route = {
-    path: '/jwc',
+    path: '/jwcc',
     categories: ['university'],
-    example: '/scu/jwc',
+    example: '/scu/jwcc',
     parameters: {},
     features: {
         requireConfig: false,
