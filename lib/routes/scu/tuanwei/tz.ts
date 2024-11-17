@@ -21,7 +21,14 @@ export const route: Route = {
     maintainers: ['AjaxZhan'],
     handler: async () => {
         // const baseUrl = '';
-        const response = await ofetch(`http://localhost:8000/get_tuanwei_rss`);
-        return response;
+        const response = await ofetch(`http://127.0.0.1:8000/get_tuanwei_rss`);
+        for (const item of response.items) {
+            item.pubDate = new Date(item.pubDate);
+        }
+        return {
+            title: response.title,
+            link: response.link,
+            item: response.items,
+        };
     },
 };
